@@ -8,4 +8,7 @@ plugin_dir=$(dirname "$(dirname "$current_script_path")")
 # shellcheck source=./lib/utils.bash
 source "${plugin_dir}/lib/utils.bash"
 
+# set ASDF_INSTALL_TYPE as release if not defined
+: "${ASDF_INSTALL_TYPE:=release}"
+
 install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
